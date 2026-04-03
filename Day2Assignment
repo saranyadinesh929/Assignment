@@ -1,0 +1,16 @@
+Advantages of java:
+•	Java is a platform independent, it can run code on any os using JVM
+•	Java is easy to learn and write
+•	It supports object-oriented programming which helps in writing reusable well structured code
+•	It handles error properly and strong memory management
+•	Java widely used for web application, mobile application, automation testing
+
+2.	Java program
+public class Day2 {
+
+	public static void main(String[] args) {
+		System.out.print("I am ");
+		System.out.print("good");
+	}
+
+}
