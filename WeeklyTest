@@ -1,0 +1,54 @@
+1. Get 2 numbers as input from user and then add both the numbers to print
+
+package Assignment;
+import java.util.Scanner;
+public class Weeklytest {
+public static void main(String[] args) {
+		Scanner scan =new Scanner(System.in);
+		System.out.print("Enter the first number: ");
+		int num1 = scan.nextInt();
+		System.out.print("Enter the second number: ");
+		int num2 = scan.nextInt();
+		System.out.println("The value is: " +(num1+num2));
+	}
+}
+
+2.Write a program to check if the given number is odd or even using conditional statement
+package Assignment;
+public class WeeklyTest2 {
+public static void main(String[] args) {
+		int num=9;
+		if(num%2==0) {
+			System.out.println("The number is even");
+		}else {
+			System.out.println("The number is odd");
+		}
+		}
+
+3.write a program to print values only divisible by 3 
+
+package Assignment;
+public class Weeklytest3 {
+public static void main(String[] args) {
+			for(int i=1; i<=20; i++) {
+			if(i%3==0) {
+			System.out.println(i);
+	}
+	}
+	}
+  }
+
+4. What is difference between For Loop and While Loop and specify its syntax
+For Loop: it is used when the number of iteration is known
+Syntax: for(int i=1; i<=10;i++)
+for (initialization; condition; increment/decrement
+
+while loop: it is used when we dont know the exact number of iterations
+Syntax:
+while(condition){
+}
+in while we initialize outside the while condition eg:
+int i=1;
+while(i<=10){
+i++;
+}
