@@ -1,0 +1,38 @@
+Create a class Employee and define methods for Employee like getSalary() and getTodayTask().
+It should have properties (Attributes) Employee ID, Department, Role.
+Select appropriate datatype for properties (EmployeeID, Department,Role)
+Display the output
+
+
+package Assignment;
+
+class Employee{
+	int employeeID;
+	String department;
+	String role;
+	
+	public void getSalary() {
+	System.out.println("Salary is 50000");
+}
+	public void getTodayTask() {
+	System.out.println("Today's Task- Complete regression testing");
+}
+	}
+	
+public class OopsAssignment {
+
+	public static void main(String[] args) {
+	
+	Employee emp = new Employee();
+	emp.employeeID = 9235;
+	emp.department = "Testing";
+	emp.role = "Senior tester";
+	System.out.println("Employee ID is " +emp.employeeID);
+	System.out.println("Employee department is " +emp.department);
+	System.out.println("Employee role is " +emp.role);
+	emp.getSalary();
+	emp.getTodayTask();
+	
+	}
+
+}
