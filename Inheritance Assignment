@@ -1,0 +1,73 @@
+Create Animal Class and also Create Cat Class, Cat should inherit Animal. Animal should have methods like walk(),sound(). By means of inheritance access the Animal methods from Cat class.
+
+package Assignment;
+class Animal{
+	
+	void walk() {
+			System.out.println("Animal is walking");
+	}
+	
+	void sound() {
+				System.out.println("Animal making a sound");
+	}
+	}
+
+public class Cat extends Animal {
+	
+	@Override
+	void sound() {
+				System.out.println("Cat says meow");
+	}
+
+	public static void main(String[] args) {
+	Cat child = new Cat();
+	child.walk(); //accessing parent method
+	child.sound(); //accessing child method
+	Animal ani = new Animal();
+	ani.sound(); //accessing parent method
+
+	}
+}
+
+2. Explain about Method Overloading and Method Overriding concept with example program
+Method Overloading: it means creating multiple methods with same name but different paramaters in same class
+eg: 
+package Assignment;
+class Overloading{
+void sub(int a, int b) {
+		System.out.println("Value " + (a-b));
+	}
+void sub(int a, int b, int c) {
+		System.out.println("value "+ (a+b-c));
+	}
+	}
+public class PolymorphismAssign {
+			public static void main(String[] args) {
+			Overloading obj = new Overloading();
+			obj.sub(5, 6);
+			obj.sub(8, 9, 7);
+		}
+		}
+
+Method Overriding: it means changing parent method in child class. Parent and child class must have same method name and parameter
+Example:
+
+package Assignment;
+
+class Bank {
+	void interest() {
+	  System.out.print("Bank interest rate 7%");
+	}
+}
+class Sbi extends Bank{
+	@Override
+	void interest() {
+	  System.out.print("SBI interest rate 9%");
+}
+}
+public class PolyOverriding {
+public static void main(String[] args) {
+		Sbi rates = new Sbi();
+		rates.interest();
+		}
+}
