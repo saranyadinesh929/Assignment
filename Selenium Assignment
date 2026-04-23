@@ -1,0 +1,31 @@
+Why we cannot automate CAPTCHA using selenium?
+It cannot be automated because its checks whether the user is human or bot and it designed to block automation and requires human validation
+
+Write a program to open Opera browser 
+
+package SeleniumAssignment;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.opera.OperaDriver;
+  public class OpenBrowser {
+	public static void main(String[] args) {
+	  WebDriver wd = new OperaDriver();
+	  wd.get("https://www.google.com/");
+	  Thread.sleep(3000);
+	  wd.quit();
+	}
+  }
+
+What is the difference between driver.quit() and driver.close()
+driver.quit:
+>It close all the browser windows and end the session
+>all tabs and browsers closed
+>we cannot resuse a driver after using quit
+driver.close:
+>It close only current browser/tab window
+
+Explain about WebDriver driver = new ChromeDriver(). Why we assign the Object of chrome driver to webdriver reference? 
+WebDriver driver = new ChromeDriver();
+WebDriver- interface
+driver - reference variable
+ChromeDriver - class. It implements webdriver interface
+>To acheive abstraction allowing us to switch browsers without changing the rest of the coding.
