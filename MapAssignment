@@ -1,0 +1,35 @@
+1.Create a Map with data type String for Key and Integer for Values and print the same;
+
+package Assignment;
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapAssignment {
+	public static void main(String[] args) {
+	Map<String,Integer> mp = new HashMap<>();
+	mp.put("monday", 1);
+	mp.put("tuesday", 2);
+	mp.put("wednesday", 2);//Duplicate value
+	mp.put("thursday", 3);
+	mp.put("thursday", 4);//Duplicate key
+	mp.put("friday", 5);
+	mp.put("saturday", 6);
+	System.out.println(mp.entrySet());
+	}
+}
+
+2.Write a program to handle exception
+
+package Assignment;
+public class ExceptionHandlingAssignment {
+	public static void main(String[] args) {
+	try {
+		int a=10;
+		int b=0;
+		int c = a/b;
+	} catch(ArithmeticException e){
+		System.out.println("Arithmetic exception please try" + e);
+	}
+	System.out.println("Program continues");
+	}
+}
