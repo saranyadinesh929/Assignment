@@ -1,0 +1,28 @@
+Navigate to https://www.tutorialspoint.com/selenium/practice/text-box.php
+Enter the details in text fields  and submit using selenium code.
+
+package SeleniumAssignment;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LocatorsAssignment {
+	public static void main(String[] args) throws InterruptedException {
+	WebDriver driver = new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.get("https://www.tutorialspoint.com/selenium/practice/text-box.php");
+	WebElement name = driver.findElement(By.id("fullname"));
+	name.sendKeys("Saranya Jayaraman");
+	WebElement mail = driver.findElement(By.cssSelector("input[name='email']"));
+	mail.sendKeys("saranyadinesh@gmail.com");
+	WebElement address = driver.findElement(By.id("address"));
+	address.sendKeys("no 123 Kodambakkam chennai-12");
+	WebElement password = driver.findElement(By.cssSelector("input[name='password']"));
+	password.sendKeys("shhhhh");
+	WebElement submit = driver.findElement(By.cssSelector("input[type='submit']"));
+	submit.click();
+	Thread.sleep(3000);
+	driver.close();
+	}
+}
