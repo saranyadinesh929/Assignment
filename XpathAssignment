@@ -1,0 +1,47 @@
+Navigate to https://www.tutorialspoint.com/selenium/practice/buttons.php
+Click the "Click Me" button using XPath
+Capture the text "You have done a dynamic click" and print this text as output
+
+package SeleniumAssignment;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class XpathAssignment {
+	public static void main(String[] args) throws InterruptedException {
+		String url ="https://www.tutorialspoint.com/selenium/practice/buttons.php";
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(url);
+		driver.findElement(By.xpath("//button[text()='Click Me']")).click();
+		Thread.sleep(2000);
+		WebElement capture = driver.findElement(By.xpath("//div[contains(text(),'dynamic click')]"));
+		System.out.println(capture.getText());
+		driver.close();
+		}
+}
+
+Navigate to https://www.tutorialspoint.com/selenium/practice/buttons.php
+Get the label of button "Right Click Me" and print as output
+
+package SeleniumAssignment;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class XpathAssignment2 {
+
+	public static void main(String[] args) {
+		String url ="https://www.tutorialspoint.com/selenium/practice/buttons.php";
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(url);
+		WebElement capture = driver.findElement(By.xpath("//button[starts-with(text(),'Right')]"));
+		System.out.println(capture.getText());
+		driver.close();
+	}
+}
