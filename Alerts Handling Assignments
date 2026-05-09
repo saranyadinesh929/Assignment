@@ -1,0 +1,36 @@
+Handle the alerts in this page https://vinothqaacademy.com/alert-and-popup/
+Following things u need to perform:
+ 1. Get the text and print the alert popup message
+ 2. Click "OK" for simple alert. Click "Cancel" for Confirm alert 
+ 3. Enter input in Prompt Alert
+
+package SeleniumAssignment;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AlertHandlingAssignment {
+	public static void main(String[] args) throws InterruptedException {
+	String url = "https://vinothqaacademy.com/alert-and-popup/";
+	WebDriver driver = new ChromeDriver();
+	driver.get(url);
+	driver.manage().window().maximize();
+	driver.findElement(By.cssSelector("button[name='alertbox']")).click();
+	Alert popup = driver.switchTo().alert();
+	System.out.println(popup.getText());
+	popup.accept(); //simple alert
+	Thread.sleep(2000);
+	driver.findElement(By.cssSelector("button[name='confirmalertbox']")).click();
+	popup.dismiss(); //Cancel for confirmation text
+	Thread.sleep(2000);
+	driver.findElement(By.cssSelector("button[name='promptalertbox1234']")).click();
+	popup.sendKeys("Yes"); //input for prompt alert
+	popup.accept();
+	WebElement prompt = driver.findElement(By.cssSelector("#demoone"));
+	System.out.println(prompt.getText());
+	driver.close();
+	}
+}
