@@ -21,15 +21,14 @@ public class RelativeAssignment {
 	WebElement usrname = driver.findElement(By.id("username"));
 	WebElement password = driver.findElement(By.id("password"));
 	WebElement register = driver.findElement(RelativeLocator.with(By.tagName("input")).below(password));
-	WebElement reg = driver.findElement(By.cssSelector("input[type='submit']"));
-	WebElement backlogin = driver.findElement(RelativeLocator.with(By.tagName("a")).toRightOf(reg));
 	firstname.sendKeys("saranya");
 	lastname.sendKeys("jayaraman");
 	usrname.sendKeys("saro");
 	password.sendKeys("12345678");
 	register.click();
 	Thread.sleep(4000);
-	backlogin.click();
+	WebElement reg = driver.findElement(By.cssSelector("input[type='submit']"));
+	driver.findElement(RelativeLocator.with(By.tagName("a")).toRightOf(reg)).click();
 	Thread.sleep(2000);
 	driver.close();
 	}
