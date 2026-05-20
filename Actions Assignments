@@ -1,0 +1,44 @@
+Slider:
+Navigate to https://www.tutorialspoint.com/selenium/practice/slider.php and move the slider to some pixel
+
+package SeleniumAssignment;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class ActionsAssignment {
+	public static void main(String[] args) {
+		String url ="https://www.tutorialspoint.com/selenium/practice/slider.php";
+		WebDriver driver = new ChromeDriver();
+		driver.get(url);
+		driver.manage().window().maximize();
+		Actions mouse = new Actions(driver);
+		WebElement slide = driver.findElement(By.id("ageInputId"));
+		mouse.clickAndHold(slide).moveByOffset(70, 0).release().perform();
+	}
+	}
+
+Frames:
+Navigate to https://www.tutorialspoint.com/selenium/practice/frames.php and click "Selenium Tutorial" link inside the iframe1
+
+package SeleniumAssignment;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FramesAssignment {
+
+	public static void main(String[] args) {
+	String url = "https://www.tutorialspoint.com/selenium/practice/frames.php";
+	WebDriver driver = new ChromeDriver();
+	driver.get(url);
+	driver.manage().window().maximize();
+	driver.switchTo().frame(0);
+	driver.findElement(By.cssSelector("div>a")).click();
+	}
+}
+
