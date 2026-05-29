@@ -1,0 +1,12 @@
+Create a Database named E-Commerce, Create a table as Amazon with product_id,Product_name,price and Qty
+
+create schema ecommerce;
+
+use ecommerce;
+
+create table amazon(
+product_id int,
+Product_name varchar(100),
+price decimal(10,2),
+quantity int
+);
