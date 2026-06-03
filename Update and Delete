@@ -1,0 +1,14 @@
+Create a table Bank which should contains columns like Cust id, Cust name, Bank Balance, active status. Insert some data into that table.
+Update the active status to 'Inactive' who ever has Bank Balance below 500.
+Delete the customer details who ever has bank balance as 0 and active status as 'Inactive'.
+
+use saro;
+create table bank( cust_id int auto_increment primary key, cust_name varchar(50), bank_balance decimal(10,2), cust_status varchar(50));
+
+insert into bank(cust_name, bank_balance, cust_status) values("saro",100000,"active"),
+("dinesh",50000,"active"),("chandra",10000,"active"),("john",200,"active"),("siva",0,"active");
+
+select * from bank;
+
+update bank set cust_status ="inactive" where bank_balance<500;
+delete from bank where bank_balance = 0 and cust_status ="inactive";
