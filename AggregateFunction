@@ -1,0 +1,15 @@
+Create a table shopping and insert values for different products.
+Print the products with highest and lowest price using aggregate functions
+
+CREATE TABLE Shopping (product_id INT auto_increment primary key, product_name VARCHAR(100), price DECIMAL(10,2),
+    quantity INT, active_status TINYINT );
+
+INSERT INTO shopping(product_name, price, quantity, active_status)
+VALUES ('Mobile', 25000.00, 10, 1), 
+('Laptop', 55000.00, 5, 1),
+('Headphones', 1500.00, 20, 1),
+('Smart Watch', 3000.00, 8, 0),
+('Keyboard', 800.00, 15, 1);
+
+select max(price) as highest_price from shopping;
+select min(price) as lowest_price from shopping;
