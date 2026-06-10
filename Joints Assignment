@@ -1,0 +1,34 @@
+Create 2 tables shopping and order.
+shopping should have columns like product_name,product_id,price
+Order should have columns like product_id,order_status,shipping_detail
+Join (Left,Right,Inner and Outer Join) this 2 tables based on product_id and display the result.
+
+
+create table shopping(product_name varchar(100), product_id int, price decimal(10,2));
+create table orders (product_id int, order_status varchar(100), shipping_detail varchar(100));
+
+INSERT INTO shopping VALUES
+('Mobile', 101, 25000.00),
+('Laptop', 102, 55000.00),
+('Headphones', 103, 1500.00),
+('Smart Watch', 104, 3000.00);
+
+INSERT INTO orders VALUES
+(101, 'Delivered', 'Chennai'),
+(102, 'Shipped', 'Coimbatore'),
+(103, 'Pending', 'Madurai'),
+(104, 'Delivered', 'Trichy');
+
+#Left join
+select * from shopping left join orders on shopping.product_id = orders.product_id;
+
+#Right join
+select * from shopping right join orders on shopping.product_id = orders.product_id;
+
+#Inner join
+select * from shopping inner join orders on shopping.product_id = orders.product_id;
+
+#Outer join
+select * from shopping left join orders on shopping.product_id = orders.product_id
+UNION
+select * from shopping right join orders on shopping.product_id = orders.product_id;
